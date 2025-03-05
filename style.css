@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e bordas não afetem as dimensões dos elementos */
+}
+
+html, body {
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da tela */
+    background-color: darkgray;
+    font-family: 'Caveat', cursive; /* Aplicando a fonte ao corpo do site */
+    font-size: 16px; /* Tamanho base da fonte para mobile-first */
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: burlywood;
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* Espaçamento menor para mobile */
+}
+
+header > h1 {
+    padding-top: 20px; /* Reduzido para mobile */
+    text-transform: uppercase;
+    font-family: 'Caveat', cursive;
+    font-size: 36px; /* Tamanho menor para mobile */
+}
+
+header > p {
+    padding-bottom: 20px; /* Reduzido para mobile */
+    font-family: 'Caveat', cursive;
+    font-size: 20px; /* Tamanho menor para mobile */
+}
+
+/* Estilos dos links no header e footer */
+header > a, footer > a {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bolder;
+    font-family: 'Caveat', cursive;
+    padding: 5px 10px; /* Adiciona um pouco de espaçamento */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Efeito de transição suave */
+}
+
+header > a:hover, footer > a:hover {
+    background-color: rgb(255, 255, 255); /* Fundo semi-transparente ao passar o mouse */
+    color: rgb(255, 208, 148); /* Muda a cor do texto ao passar o mouse */
+}
+
+/* Estilos das seções */
+section {
+    padding-top: 5vh; /* Reduzido para mobile */
+    padding-bottom: 5vh; /* Reduzido para mobile */
+    line-height: 1.5em; /* Espaçamento menor para mobile */
+    padding-left: 15px; /* Reduzido para mobile */
+    font-family: 'Caveat', cursive;
+    text-align: center; /* Centraliza o texto */
+}
+
+section.normal {
+    background-color: white;
+    color: black;
+}
+
+section.normal > p {
+    width: 90%; /* Largura responsiva para mobile */
+    max-width: 800px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza o parágrafo */
+    padding: 10px; /* Adiciona um pouco de padding */
+}
+
+section.imagem {
+    background-color: rgb(54, 54, 54);
+    color: white;
+    box-shadow: inset 3px 3px 5px 0px burlywood;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+section.imagem > p {
+    width: 90%; /* Largura responsiva para mobile */
+    max-width: 200px; /* Limita a largura máxima */
+    background-color: rgba(37, 37, 37, 0.664);
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Caveat', cursive;
+    margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+section#img01 {
+    background-image: url('imagens/wallpaper-img01.jpg');
+}
+
+section#img02 {
+    background-image: url('imagens/wallpaper-img02.jpg');
+}
+
+/* Estilos do rodapé */
+footer {
+    background-color: burlywood;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px; /* Tamanho menor para mobile */
+}
+
+/* Media Queries para Tablet (768px a 1023px) */
+@media (min-width: 768px) {
+    html, body {
+        font-size: 18px; /* Aumenta o tamanho da fonte para tablet */
+    }
+
+    header > h1 {
+        font-size: 42px; /* Tamanho maior para tablet */
+        padding-top: 30px;
+    }
+
+    header > p {
+        font-size: 24px; /* Tamanho maior para tablet */
+        padding-bottom: 30px;
+    }
+
+    section {
+        padding-top: 7vh; /* Aumenta o espaçamento para tablet */
+        padding-bottom: 7vh;
+        padding-left: 20px;
+    }
+
+    footer {
+        font-size: 18px; /* Aumenta o tamanho da fonte para tablet */
+    }
+}
+
+/* Media Queries para Desktop (a partir de 1024px) */
+@media (min-width: 1024px) {
+    html, body {
+        font-size: 20px; /* Tamanho maior para desktop */
+    }
+
+    header > h1 {
+        font-size: 48px; /* Tamanho maior para desktop */
+        padding-top: 50px;
+    }
+
+    header > p {
+        font-size: 28px; /* Tamanho maior para desktop */
+        padding-bottom: 50px;
+    }
+
+    section {
+        padding-top: 10vh; /* Aumenta o espaçamento para desktop */
+        padding-bottom: 10vh;
+        padding-left: 30px;
+    }
+
+    section.normal > p {
+        max-width: 800px; /* Largura máxima para desktop */
+    }
+
+    section.imagem > p {
+        width: 400px; /* Largura fixa para desktop */
+    }
+
+    footer {
+        font-size: 20px; /* Tamanho maior para desktop */
+    }
+}
